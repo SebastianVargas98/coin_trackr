@@ -27,8 +27,12 @@ class CryptoProvider extends ChangeNotifier {
 
   List<Crypto> _cryptoList = [];
   List<Crypto> get cryptoList {
-    return _isFilteredFavorites ? _cryptoListFiltered : _cryptoList;
+    return _isFilteredFavorites || _isFilteredSearch
+        ? _cryptoListFiltered
+        : _cryptoList;
   }
+
+  bool _isFilteredSearch = false;
 
   List<Crypto> _cryptoListFiltered = [];
 
@@ -42,6 +46,19 @@ class CryptoProvider extends ChangeNotifier {
   bool get isLoading => _isLoading;
 
   User? _currentUser;
+
+  void searchCrypto(String searchText) {
+    if (searchText.isEmpty || searchText.length < 3) {
+      _isFilteredSearch = false;
+    } else {
+      _isFilteredSearch = true;
+      _isFilteredFavorites = false;
+      _cryptoListFiltered = _cryptoList.where((crypto) {
+        return crypto.name.toLowerCase().contains(searchText.toLowerCase());
+      }).toList();
+    }
+    notifyListeners();
+  }
 
   User? getCurrentUser() {
     final userResponse = getCurrentUserUseCase.call(NoParams());
