@@ -34,5 +34,5 @@ CoinTrackr es una aplicación de seguimiento de criptomonedas desarrollada en Fl
 1. **Clonar el repositorio**:
 
    ```bash
-   git clone https://github.com/tu-usuario/cointrackr.git
+   git clone https://github.com/SebastianVargas98/coin_trackr.git
    cd cointrackr
