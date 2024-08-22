@@ -40,7 +40,7 @@ class ProfileProvider extends ChangeNotifier {
   User? _currentUser;
   User get currentUser => _currentUser!;
 
-  void navigateToLogin() {
+  void _navigateToLogin() {
     _navigationManager.popUntil(AppRoutes.login);
   }
 
@@ -169,5 +169,9 @@ class ProfileProvider extends ChangeNotifier {
       AppColors.errorColor,
       duration: const Duration(seconds: 3),
     );
+  }
+
+  void logOut() {
+    _navigateToLogin();
   }
 }
