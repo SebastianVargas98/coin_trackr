@@ -24,6 +24,12 @@ class _HomePageState extends State<HomePage> {
   }
 
   @override
+  void initState() {
+    widget._navigationProvider.setTab(HomeTab.cryptoList);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
