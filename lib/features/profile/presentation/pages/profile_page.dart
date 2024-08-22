@@ -8,7 +8,9 @@ import 'package:coin_trackr/features/auth/presentation/widgets/auth_calendar_fie
 import 'package:coin_trackr/features/auth/presentation/widgets/auth_field.dart';
 import 'package:coin_trackr/core/presentation/Widgets/gradient_button.dart';
 import 'package:coin_trackr/features/profile/presentation/providers/profile_provider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
@@ -91,15 +93,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                       ),
                       _buildUpdatePasswordForm(),
-                      Container(
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(80)),
-                          color: AppColors.greyColor,
-                        ),
-                        margin: const EdgeInsets.symmetric(vertical: 20),
-                        width: double.maxFinite,
-                        height: 2,
-                      ),
+                      _buildDivider(),
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
@@ -109,6 +103,8 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                       ),
                       _buildUpdateProfileForm(),
+                      _buildDivider(),
+                      _buildLogOutButton(),
                     ],
                   ),
                 ),
@@ -118,6 +114,28 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
         _buildLoader(),
       ],
+    );
+  }
+
+  Widget _buildDivider() {
+    return Container(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(80)),
+        color: AppColors.greyColor,
+      ),
+      margin: const EdgeInsets.symmetric(vertical: 20),
+      width: double.maxFinite,
+      height: 2,
+    );
+  }
+
+  Widget _buildLogOutButton() {
+    return GradientButton(
+      buttonText: Text(
+        'Cerrar Sesión',
+        style: TextStyles.pBody1.bold.staticColor(AppColors.whiteColor),
+      ),
+      onPressed: _logOutAction,
     );
   }
 
@@ -245,6 +263,10 @@ class _ProfilePageState extends State<ProfilePage> {
   ///Hide the keyboard if showed
   void _hideKeyboard() {
     FocusScope.of(context).requestFocus(FocusNode());
+  }
+
+  void _logOutAction() {
+    widget._profileProvider.logOut();
   }
 
   void _updatePasswordAction() {
