@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "471326643702",
+    "project_id": "coin-trakr",
+    "storage_bucket": "coin-trakr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:471326643702:android:a89812185876c29a9063d7",
+        "android_client_info": {
+          "package_name": "com.wenia.coin_trackr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKJiPjhQ3PDKDC4MZKgVonjnChUWQvjRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
