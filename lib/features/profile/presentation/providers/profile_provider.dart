@@ -1,3 +1,4 @@
+import 'package:coin_trackr/core/common/utils/app_routes.dart';
 import 'package:coin_trackr/core/data/entities/user.dart';
 import 'package:coin_trackr/core/common/managers/navigator_manager.dart';
 import 'package:coin_trackr/core/common/error/failures.dart';
@@ -39,8 +40,8 @@ class ProfileProvider extends ChangeNotifier {
   User? _currentUser;
   User get currentUser => _currentUser!;
 
-  void navigateTo() {
-    //_navigationManager.navigatePushingTo(AppRoutes);
+  void navigateToLogin() {
+    _navigationManager.popUntil(AppRoutes.login);
   }
 
   User? getCurrentUser() {
