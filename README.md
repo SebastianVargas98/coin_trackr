@@ -1,16 +1,38 @@
-# coin_trackr
+# CoinTrackr
 
-An app to track your favorites cryptos.
+CoinTrackr es una aplicación de seguimiento de criptomonedas desarrollada en Flutter que utiliza Firebase para la autenticación y Firestore para almacenar los datos de los usuarios. La aplicación sigue la arquitectura limpia y utiliza pruebas unitarias para garantizar la calidad del código.
 
-## Getting Started
+## Características
 
-This project is a starting point for a Flutter application.
+- Registro y autenticación de usuarios utilizando Firebase.
+- Seguimiento de criptomonedas con listado y búsqueda.
+- Posibilidad de marcar criptomonedas como favoritas.
+- Gestión de estado con Provider.
+- Arquitectura limpia para mantener la separación de responsabilidades.
+- Pruebas unitarias para casos de uso y repositorios.
 
-A few resources to get you started if this is your first Flutter project:
+## Tecnologías Utilizadas
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Flutter**: Framework de desarrollo de aplicaciones móviles.
+- **Firebase Authentication**: Para la autenticación de usuarios.
+- **Firestore**: Base de datos en la nube para almacenar los datos de los usuarios y sus criptomonedas favoritas.
+- **Provider**: Gestión del estado.
+- **get_it**: Para la inyección de dependencias.
+- **Mockito**: Para pruebas unitarias con mocks.
+- **Flare**: Para animaciones.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Configuración del Proyecto
+
+### Requisitos Previos
+
+- Tener instalado [Flutter](https://flutter.dev/docs/get-started/install).
+- Tener configurado un proyecto de Firebase.
+- Tener configurado un editor de texto como VS Code o Android Studio.
+
+### Instalación
+
+1. **Clonar el repositorio**:
+
+   ```bash
+   git clone https://github.com/tu-usuario/cointrackr.git
+   cd cointrackr
